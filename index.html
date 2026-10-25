@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mèo Lang Thang Phờ Tô | by Triệu Sâm</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#0a130e',
+              900: '#111f17',
+              800: '#1a2f23',
+              700: '#264634',
+            },
+            cream: {
+              50: '#fdfbf7',
+              100: '#f7f1e5',
+              200: '#ede0c8',
+            },
+            amberfilm: {
+              400: '#eab308',
+              500: '#d99b26',
+              600: '#b87d14',
+            }
+          },
+          fontFamily: {
+            script: ['"Alex Brush"', 'cursive'],
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0a130e;
+      color: #f7f1e5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .film-grain {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .glass-card {
+      background: rgba(17, 31, 23, 0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(237, 224, 200, 0.12);
+    }
+    .active-tab {
+      background-color: #d99b26 !important;
+      color: #0a130e !important;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="film-grain selection:bg-amberfilm-500 selection:text-forest-950">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-forest-950/85 backdrop-blur-md border-b border-cream-200/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="font-script text-3xl text-amberfilm-500 group-hover:text-cream-100 transition">Mèo Lang Thang</span>
+        <span class="hidden sm:inline-block text-xs uppercase tracking-widest text-cream-200/60 border-l border-cream-200/20 pl-2">Phờ Tô</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-cream-200/80">
+        <a href="#about" class="hover:text-amberfilm-500 transition">Về Mèo</a>
+        <a href="#portfolio" class="hover:text-amberfilm-500 transition">Tác Phẩm</a>
+        <a href="#pricing" class="hover:text-amberfilm-500 transition">Bảng Giá</a>
+        <a href="#calculator" class="hover:text-amberfilm-500 transition">Tính Chi Phí</a>
+        <a href="#process" class="hover:text-amberfilm-500 transition">Quy Trình & Lưu Ý</a>
+      </nav>
+
+      <a href="#calculator" class="inline-flex items-center gap-2 bg-amberfilm-500 hover:bg-amberfilm-400 text-forest-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-full transition shadow-lg shadow-amberfilm-500/20">
+        <i data-lucide="camera" class="w-4 h-4"></i>
+        <span>Book Mèo Ngay</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-16 overflow-hidden">
+    <!-- Background Image with Dark Forest Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80" 
+        alt="Mèo Lang Thang Background" 
+        class="w-full h-full object-cover opacity-35 scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-forest-950/70 via-forest-950/60 to-forest-950"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-800/90 border border-amberfilm-500/30 text-amberfilm-400 text-xs uppercase tracking-widest mb-6">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <span>Storytelling & Vintage Photography</span>
+      </div>
+
+      <h1 class="font-script text-6xl sm:text-8xl md:text-9xl text-cream-50 drop-shadow-lg leading-none mb-2">
+        Mèo Lang Thang
+      </h1>
+      <p class="font-serif italic text-lg sm:text-2xl text-amberfilm-500 mb-6">
+        by Triệu Sâm — "Theo đuổi những câu chuyện được giấu trong những bức ảnh"
+      </p>
+      <p class="max-w-xl mx-auto text-sm sm:text-base text-cream-200/80 leading-relaxed mb-10">
+        Mèo Lang Thang Phờ Tô được sinh ra với niềm đam mê nhiếp ảnh. Mình sẽ làm tất cả để có được một tấm ảnh/bộ ảnh đẹp nhất trong mắt của mình. Tất cả những gì mình làm là vì đam mê!
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#portfolio" class="inline-flex items-center gap-2 bg-cream-100 hover:bg-white text-forest-950 font-semibold px-6 py-3 rounded-full transition">
+          <span>Khám Phá Tác Phẩm</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+        <a href="#pricing" class="inline-flex items-center gap-2 bg-forest-800/80 hover:bg-forest-700 text-cream-100 border border-cream-200/20 font-medium px-6 py-3 rounded-full transition">
+          <i data-lucide="receipt" class="w-4 h-4 text-amberfilm-500"></i>
+          <span>Xem Menu "Tiệm Phở"</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & MILESTONES -->
+  <section id="about" class="py-20 border-t border-cream-200/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Bio & Contact Card -->
+        <div class="md:col-span-5 glass-card rounded-2xl p-6 sm:p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 rounded-2xl bg-amberfilm-500/20 border border-amberfilm-500/40 flex items-center justify-center text-amberfilm-500">
+              <i data-lucide="aperture" class="w-8 h-8"></i>
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-widest text-amberfilm-500 font-semibold">Nhiếp ảnh gia tự do</span>
+              <h2 class="font-serif text-2xl font-bold text-cream-50">Huỳnh Thái Triệu Sâm</h2>
+              <p class="text-xs text-cream-200/70">TP. Hồ Chí Minh • TDTU</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-cream-200/85 leading-relaxed mb-6">
+            Chào bạn, mình là chủ <strong>"tiệm phở" Mèo Lang Thang Phờ Tô</strong>. Mình ưu tiên sự thoải mái, tự nhiên trong từng buổi chụp và luôn hỗ trợ tư vấn nhiệt tình từ địa điểm, trang phục, concept cho đến cách tạo dáng để bạn không bao giờ thấy ngại ống kính.
+          </p>
+
+          <div class="space-y-3 pt-4 border-t border-cream-200/10 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-cream-200/60 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-amberfilm-500"></i> Điện thoại / Zalo:</span>
+              <a href="tel:0909193241" class="font-semibold text-cream-50 hover:text-amberfilm-500">0909 193 241</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-cream-200/60 flex items-center gap-2"><i data-lucide="instagram" class="w-4 h-4 text-amberfilm-500"></i> Instagram:</span>
+              <span class="font-semibold text-cream-50">Mèo Lang Thang</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-cream-200/60 flex items-center gap-2"><i data-lucide="facebook" class="w-4 h-4 text-amberfilm-500"></i> Facebook:</span>
+              <span class="font-semibold text-cream-50">Huỳnh Sâm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Milestones & 4 Core Styles -->
+        <div class="md:col-span-7 space-y-6">
+          <div class="glass-card rounded-2xl p-6 sm:p-8">
+            <h3 class="font-serif text-xl font-bold text-cream-50 mb-5 flex items-center gap-2">
+              <i data-lucide="award" class="w-5 h-5 text-amberfilm-500"></i>
+              <span>Cột Mốc & Giải Thưởng</span>
+            </h3>
+
+            <div class="relative pl-6 border-l-2 border-amberfilm-500/40 space-y-6">
+              <!-- 2025 -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-forest-900 border-2 border-amberfilm-500"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-amberfilm-500">Tháng 08 / 2025</span>
+                <h4 class="font-semibold text-cream-50 mt-0.5">Bắt đầu con đường nhiếp ảnh</h4>
+                <p class="text-xs text-cream-200/70 mt-1">Đặt những viên gạch đầu tiên cho phong cách Storytelling & Chân dung ngoại cảnh.</p>
+              </div>
+
+              <!-- 2026 -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-amberfilm-500"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-amberfilm-500">Năm 2026</span>
+                <h4 class="font-semibold text-cream-50 mt-0.5">Nhiếp ảnh gia tự do & Giải thưởng nghệ thuật</h4>
+                <ul class="mt-2 space-y-2 text-xs sm:text-sm text-cream-200/85">
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="trophy" class="w-4 h-4 text-amberfilm-400 shrink-0 mt-0.5"></i>
+                    <span><strong>Giải Nhất</strong> cuộc thi nhiếp ảnh <em>"Khoa Dược TDTU trong tôi"</em>.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="medal" class="w-4 h-4 text-amberfilm-400 shrink-0 mt-0.5"></i>
+                    <span><strong>Giải Ba</strong> (Tác phẩm <em>"Bình Yên"</em>) & <strong>Giải Khuyến Khích</strong> (Tác phẩm <em>"Người Lưu Giữ Thời Gian"</em>) cuộc thi <em>"Zi Tích Talk"</em>.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-amberfilm-400 shrink-0 mt-0.5"></i>
+                    <span>CTV Truyền thông Đoàn Khoa Dược & Liên chi Hội Sinh viên Khoa Dược – ĐH Tôn Đức Thắng (TDTU).</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Pillars Summary -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="glass-card p-4 rounded-xl text-center">
+              <i data-lucide="mountain-snow" class="w-5 h-5 text-amberfilm-500 mx-auto mb-1.5"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider">Landscape</h4>
+              <p class="text-[11px] text-cream-200/60 mt-1">Góc nhìn & cái vibe bình yên của Mèo</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+              <i data-lucide="footprints" class="w-5 h-5 text-amberfilm-500 mx-auto mb-1.5"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider">Street</h4>
+              <p class="text-[11px] text-cream-200/60 mt-1">Đường phố & chất riêng Storytelling</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+              <i data-lucide="user-check" class="w-5 h-5 text-amberfilm-500 mx-auto mb-1.5"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider">Portrait</h4>
+              <p class="text-[11px] text-cream-200/60 mt-1">Cá nhân, Thời trang đồ án & Couple</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center">
+              <i data-lucide="calendar-heart" class="w-5 h-5 text-amberfilm-500 mx-auto mb-1.5"></i>
+              <h4 class="font-bold text-xs uppercase tracking-wider">Event</h4>
+              <p class="text-[11px] text-cream-200/60 mt-1">Sự kiện cá nhân & học thuật tại trường</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION (ORGANIZED BY TABS) -->
+  <section id="portfolio" class="py-20 bg-forest-900/50 border-t border-cream-200/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-amberfilm-500 font-semibold">Portfolio Chọn Lọc</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cream-50 mt-1">Góc Nhìn Của Mèo</h2>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="portfolio-tabs">
+          <button onclick="filterPortfolio('all', this)" class="active-tab px-4 py-2 rounded-full text-xs uppercase tracking-wider bg-forest-800 text-cream-200 transition">Tất Cả</button>
+          <button onclick="filterPortfolio('portrait', this)" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider bg-forest-800 text-cream-200 hover:bg-forest-700 transition">Chân Dung & Couple</button>
+          <button onclick="filterPortfolio('fashion', this)" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider bg-forest-800 text-cream-200 hover:bg-forest-700 transition">Thời Trang / Đồ Án</button>
+          <button onclick="filterPortfolio('landscape', this)" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider bg-forest-800 text-cream-200 hover:bg-forest-700 transition">Landscape</button>
+          <button onclick="filterPortfolio('street', this)" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider bg-forest-800 text-cream-200 hover:bg-forest-700 transition">Street</button>
+          <button onclick="filterPortfolio('event', this)" class="px-4 py-2 rounded-full text-xs uppercase tracking-wider bg-forest-800 text-cream-200 hover:bg-forest-700 transition">Sự Kiện</button>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div id="portfolio-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JS will populate items from Mèo Lang Thang's PDF catalog -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION (ORGANIZED & CLEAN) -->
+  <section id="pricing" class="py-20 border-t border-cream-200/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest text-amberfilm-500 font-semibold">Menu Dịch Vụ Minh Bạch</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cream-50 mt-1">Bảng Giá Các Gói Chụp</h2>
+        <p class="text-sm text-cream-200/75 mt-3">
+          Công thức chung: <strong>Tổng chi phí = Tiền công theo gói + Tiền xăng xe + Tiền vé/nước tại địa điểm (nếu có)</strong>.
+        </p>
+      </div>
+
+      <!-- 3 Main Package Columns -->
+      <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- GROUP 1: GÓI CƠ BẢN (1 THỢ) -->
+        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-amberfilm-500">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-amberfilm-500/20 text-amberfilm-400 text-xs font-semibold">Phổ biến & Tiết kiệm</span>
+              <span class="text-xs text-cream-200/60">1 Thợ (Mèo trực tiếp chụp)</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-cream-50">1. Nhóm Gói Cơ Bản</h3>
+            <p class="text-xs text-cream-200/70 mt-1 mb-6">
+              Làm việc 1-1 trực tiếp với Mèo, gọn lẹ, ít di chuyển cồng kềnh, tối ưu chi phí nhất.
+            </p>
+
+            <!-- Sub-packages -->
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-bold text-sm text-amberfilm-400">A. Chân Dung / Couple Cơ Bản</h4>
+                  <span class="text-[11px] bg-forest-800 px-2 py-0.5 rounded text-cream-100">Hậu kỳ 10 tấm</span>
+                </div>
+                <ul class="mt-2.5 space-y-1 text-xs text-cream-200/85">
+                  <li class="flex justify-between"><span>• Gói 1 người:</span> <strong>150.000đ <span class="text-cream-200/50 font-normal">(Ko hậu kỳ: 100k)</span></strong></li>
+                  <li class="flex justify-between"><span>• Gói 2 người:</span> <strong>250.000đ <span class="text-cream-200/50 font-normal">(Ko hậu kỳ: 200k)</span></strong></li>
+                  <li class="text-cream-200/60 pt-1">Phụ thu chỉnh thêm (>10 tấm): 10k–15k/tấm. Chỉnh dáng sâu: +10k/tấm.</li>
+                </ul>
+              </div>
+
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-bold text-sm text-amberfilm-400">B. Cosplay / Thời Trang</h4>
+                  <span class="text-[11px] bg-forest-800 px-2 py-0.5 rounded text-cream-100">Chỉnh sâu 5 tấm</span>
+                </div>
+                <ul class="mt-2.5 space-y-1 text-xs text-cream-200/85">
+                  <li class="flex justify-between"><span>• Gói 1 người:</span> <strong>150.000đ <span class="text-cream-200/50 font-normal">(Ko hậu kỳ: 100k)</span></strong></li>
+                  <li class="flex justify-between"><span>• Gói 2 người:</span> <strong>250.000đ <span class="text-cream-200/50 font-normal">(Ko hậu kỳ: 200k)</span></strong></li>
+                  <li class="text-cream-200/60 pt-1">Giảm từ 10 xuống 5 tấm để chỉnh chuyên sâu toàn bộ. Thêm ảnh (>5 tấm): 20k–30k/tấm.</li>
+                </ul>
+              </div>
+
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-bold text-sm text-amberfilm-400">C. Combo Cơ Bản + Chụp Film</h4>
+                  <span class="text-[11px] bg-forest-800 px-2 py-0.5 rounded text-cream-100">10 tấm KTS + 30 tấm Film</span>
+                </div>
+                <ul class="mt-2.5 space-y-1 text-xs text-cream-200/85">
+                  <li class="flex justify-between"><span>• Gói 1 người (Bao gồm film & tráng):</span> <strong>400.000đ</strong></li>
+                  <li class="text-cream-200/60 pt-1">Nhận 10 ảnh Digital đã hậu kỳ + ~30 ảnh Film từ Lab (nhận âm bản tính thêm ship từ Lab).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-cream-200/10 text-xs text-cream-200/70">
+            <p><strong>Lưu ý:</strong> Do chỉ có 1 mình Mèo chụp nên nếu bạn mang nhiều đồ cồng kềnh, hãy rủ thêm bạn bè đi cùng để phụ cầm đồ nhé!</p>
+          </div>
+        </div>
+
+        <!-- GROUP 2: GÓI CHUYÊN SÂU (CÓ TEAM HỖ TRỢ) -->
+        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-emerald-400">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">Concept Nghiêm Túc</span>
+              <span class="text-xs text-cream-200/60">Mèo + 1 Nhân sự hỗ trợ</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-cream-50">2. Gói Chuyên Sâu (Có Team)</h3>
+            <p class="text-xs text-cream-200/70 mt-1 mb-6">
+              Dành cho các bộ ảnh/đồ án phức tạp cần sự chỉn chu tối đa. Bạn được chọn thêm <strong>+1 bạn hậu cần</strong> hoặc <strong>+1 thợ chụp phụ</strong>.
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-bold text-sm text-emerald-300">Chân Dung / Couple Chuyên Sâu</h4>
+                  <span class="text-[11px] bg-forest-800 px-2 py-0.5 rounded text-cream-100">Chỉnh sâu 10 tấm</span>
+                </div>
+                <ul class="mt-3 space-y-2 text-xs text-cream-200/85">
+                  <li class="flex justify-between text-sm"><span>• Gói 1 người:</span> <strong>400.000đ</strong></li>
+                  <li class="flex justify-between text-sm"><span>• Gói 2 người:</span> <strong>700.000đ</strong></li>
+                  <li class="text-cream-200/60 pt-1">
+                    Chỉnh chuyên sâu toàn bộ 10 tấm. Phụ thu chỉnh thêm (>10 tấm): <strong>20k–30k/tấm</strong>.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <h4 class="font-bold text-sm text-emerald-300 mb-1">Ưu điểm vượt trội</h4>
+                <ul class="space-y-1.5 text-xs text-cream-200/80">
+                  <li>• Có người phụ trách hậu cần, hắt sáng, chỉnh trang phục liên tục.</li>
+                  <li>• Hoặc có thêm 1 máy phụ chụp song song để đảm bảo đa dạng góc máy nhất.</li>
+                </ul>
+              </div>
+
+              <div class="p-4 rounded-xl bg-amberfilm-500/10 border border-amberfilm-500/30">
+                <h4 class="font-bold text-sm text-amberfilm-400">Gói Chụp Có Nhu Cầu Khác</h4>
+                <p class="text-xs text-cream-200/80 mt-1">
+                  Nếu bạn cần chụp Lookbook, Đồ án tốt nghiệp, Sự kiện hoặc nhóm đông người hơn, hãy nhắn riêng để Mèo báo giá chi tiết nhé!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-cream-200/10 text-xs text-cream-200/70">
+            <p><strong>Khuyết điểm nhỏ:</strong> Chi phí cao hơn gói cơ bản do bao gồm chi phí nhân sự đi kèm.</p>
+          </div>
+        </div>
+
+        <!-- GROUP 3: GÓI CHỤP FILM 35MM -->
+        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between border-t-4 border-t-orange-400">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-semibold">Hoài Cổ & Cảm Xúc</span>
+              <span class="text-xs text-cream-200/60">35mm Film SLR</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-cream-50">3. Nhóm Gói Chụp Film</h3>
+            <p class="text-xs text-cream-200/70 mt-1 mb-6">
+              Dành cho những tâm hồn thực sự yêu màu hạt (grain) và cảm xúc nguyên bản của máy phim cơ.
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-bold text-sm text-orange-300">Gói Thuần Film (Chân dung / Couple)</h4>
+                  <span class="text-[11px] bg-forest-800 px-2 py-0.5 rounded text-cream-100">~30 tấm / cuộn</span>
+                </div>
+                <ul class="mt-3 space-y-2 text-xs text-cream-200/85">
+                  <li class="flex justify-between text-sm"><span>• Gói 1 người (Gồm film + tráng):</span> <strong>300.000đ</strong></li>
+                  <li class="flex justify-between text-sm"><span>• Gói 2 người (Gồm film + tráng):</span> <strong>550.000đ</strong></li>
+                  <li class="text-cream-200/60 pt-1">
+                    Trả toàn bộ ~30 tấm được tráng & scan từ Lab. Nếu muốn lấy cuộn âm bản (negative), bạn chỉ cần thanh toán thêm phí ship từ Lab về địa chỉ của bạn.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-4 rounded-xl bg-forest-950/60 border border-cream-200/10">
+                <h4 class="font-bold text-sm text-orange-300 mb-1.5">Đặc thù & Lưu ý bảo quản Film</h4>
+                <ul class="space-y-1.5 text-xs text-cream-200/80">
+                  <li>• Màu ảnh phụ thuộc hoàn toàn vào loại film, Lab tráng và điều kiện nắng/thời tiết lúc chụp.</li>
+                  <li>• <strong>Khuyên dùng:</strong> Nên để Mèo chuẩn bị hoặc ship film qua cho Mèo bảo quản trước (Mèo xin phép miễn trừ trách nhiệm ảnh bị mờ, nhòe, lệch tông nếu khách tự bảo quản film sai cách).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-cream-200/10 text-xs text-cream-200/70">
+            <p><strong>Lưu ý hậu kỳ:</strong> Ảnh Film giữ nguyên màu tráng từ Lab, không áp dụng can thiệp bóp dáng/chỉnh mẫu như ảnh Digital.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PRICE CALCULATOR & BOOKING -->
+  <section id="calculator" class="py-20 bg-forest-900/60 border-t border-cream-200/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-amberfilm-500/30">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs uppercase tracking-widest text-amberfilm-500 font-semibold">Ước Tính Tự Động</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-cream-50 mt-1">Tính Nhanh Chi Phí "Tô Phở" & Đặt Lịch</h2>
+          <p class="text-xs sm:text-sm text-cream-200/70 mt-2">
+            Chọn gói chụp bên dưới để hệ thống tự tính tổng chi phí dự kiến, số tiền cọc 50% và tạo tin nhắn đặt lịch gửi cho Mèo.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8">
+          <!-- Left Controls -->
+          <div class="md:col-span-7 space-y-5">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-cream-200/80 font-semibold mb-2">1. Chọn Gói Chụp & Số Người</label>
+              <select id="calc-package" onchange="updateCalculator()" class="w-full bg-forest-950 border border-cream-200/20 rounded-xl px-4 py-3 text-sm text-cream-50 focus:outline-none focus:border-amberfilm-500">
+                <option value="basic_1" data-price="150000" data-no-retouch="100000" data-extra-rate="15000" data-included="10">Gói Cơ Bản (Chân dung) - 1 người (150k / 10 tấm)</option>
+                <option value="basic_2" data-price="250000" data-no-retouch="200000" data-extra-rate="15000" data-included="10">Gói Cơ Bản (Chân dung / Couple) - 2 người (250k / 10 tấm)</option>
+                <option value="cosplay_1" data-price="150000" data-no-retouch="100000" data-extra-rate="25000" data-included="5">Gói Chỉnh Chuyên Sâu (Cosplay/Thời trang) - 1 người (150k / 5 tấm)</option>
+                <option value="cosplay_2" data-price="250000" data-no-retouch="200000" data-extra-rate="25000" data-included="5">Gói Chỉnh Chuyên Sâu (Cosplay/Thời trang) - 2 người (250k / 5 tấm)</option>
+                <option value="combo_film_1" data-price="400000" data-no-retouch="400000" data-extra-rate="15000" data-included="10">Combo Cơ Bản + Chụp Film - 1 người (400k / 10 KTS + 30 Film)</option>
+                <option value="pro_team_1" data-price="400000" data-no-retouch="400000" data-extra-rate="25000" data-included="10">Gói Chuyên Sâu Có Team Hỗ Trợ - 1 người (400k / 10 tấm)</option>
+                <option value="pro_team_2" data-price="700000" data-no-retouch="700000" data-extra-rate="25000" data-included="10">Gói Chuyên Sâu Có Team Hỗ Trợ - 2 người (700k / 10 tấm)</option>
+                <option value="pure_film_1" data-price="300000" data-no-retouch="300000" data-extra-rate="0" data-included="30">Gói Thuần Film 35mm - 1 người (300k / ~30 tấm Lab)</option>
+                <option value="pure_film_2" data-price="550000" data-no-retouch="550000" data-extra-rate="0" data-included="30">Gói Thuần Film 35mm - 2 người (550k / ~30 tấm Lab)</option>
+              </select>
+            </div>
+
+            <!-- Retouch Option -->
+            <div class="flex items-center justify-between p-3.5 rounded-xl bg-forest-950/70 border border-cream-200/10">
+              <div>
+                <span class="text-sm font-medium text-cream-50 block">Không cần hậu kỳ (Chỉ lấy toàn bộ ảnh gốc)</span>
+                <span class="text-xs text-cream-200/60">Giảm 50.000đ (Áp dụng cho Gói Cơ Bản & Cosplay 1 thợ)</span>
+              </div>
+              <input type="checkbox" id="calc-no-retouch" onchange="updateCalculator()" class="w-5 h-5 accent-amberfilm-500 rounded cursor-pointer" />
+            </div>
+
+            <!-- Extra Retouch & Body Edit -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs text-cream-200/80 mb-1.5">Số tấm muốn chỉnh thêm ngoài gói:</label>
+                <input type="number" id="calc-extra-photos" min="0" max="50" value="0" oninput="updateCalculator()" class="w-full bg-forest-950 border border-cream-200/20 rounded-xl px-3.5 py-2.5 text-sm text-cream-50" />
+              </div>
+              <div>
+                <label class="block text-xs text-cream-200/80 mb-1.5">Số tấm chỉnh mẫu sâu (bóp dáng, +10k/tấm):</label>
+                <input type="number" id="calc-deep-body" min="0" max="50" value="0" oninput="updateCalculator()" class="w-full bg-forest-950 border border-cream-200/20 rounded-xl px-3.5 py-2.5 text-sm text-cream-50" />
+              </div>
+            </div>
+
+            <!-- Client Info for Quick Copy -->
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div>
+                <label class="block text-xs text-cream-200/80 mb-1.5">Tên của bạn:</label>
+                <input type="text" id="client-name" placeholder="VD: Ngọc Trâm" oninput="updateCalculator()" class="w-full bg-forest-950 border border-cream-200/20 rounded-xl px-3.5 py-2.5 text-sm text-cream-50" />
+              </div>
+              <div>
+                <label class="block text-xs text-cream-200/80 mb-1.5">Địa điểm & Ngày dự kiến (tốt nhất trước 1 tuần):</label>
+                <input type="text" id="client-date" placeholder="VD: Dinh Độc Lập - Chủ Nhật tuần sau" oninput="updateCalculator()" class="w-full bg-forest-950 border border-cream-200/20 rounded-xl px-3.5 py-2.5 text-sm text-cream-50" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Summary Receipt -->
+          <div class="md:col-span-5 bg-forest-950 rounded-2xl p-6 border border-cream-200/15 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-cream-200/10 pb-3 mb-4">
+                <span class="font-serif font-bold text-lg text-amberfilm-500">Hóa Đơn Tạm Tính</span>
+                <span class="text-xs text-cream-200/60">Mèo Lang Thang Phờ Tô</span>
+              </div>
+
+              <div class="space-y-2.5 text-xs sm:text-sm">
+                <div class="flex justify-between">
+                  <span class="text-cream-200/70">Tiền công gói chụp:</span>
+                  <span id="summary-base" class="font-semibold text-cream-50">150.000đ</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-cream-200/70">Phụ thu chỉnh thêm ảnh:</span>
+                  <span id="summary-extra" class="font-semibold text-cream-50">0đ</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-cream-200/70">Phụ thu chỉnh dáng sâu:</span>
+                  <span id="summary-body" class="font-semibold text-cream-50">0đ</span>
+                </div>
+                <div class="flex justify-between text-xs text-cream-200/60 pt-1">
+                  <span>+ Tiền xăng xe & Vé/nước (nếu có):</span>
+                  <span>Báo theo địa điểm</span>
+                </div>
+              </div>
+
+              <div class="my-5 pt-4 border-t border-dashed border-cream-200/20">
+                <div class="flex justify-between items-baseline">
+                  <span class="text-sm font-semibold text-cream-100">TỔNG TIỀN CÔNG:</span>
+                  <span id="summary-total" class="font-serif text-2xl sm:text-3xl font-bold text-amberfilm-500">150.000đ</span>
+                </div>
+                <div class="flex justify-between items-center mt-2 p-2.5 rounded-lg bg-amberfilm-500/10 border border-amberfilm-500/30 text-xs">
+                  <span class="text-amberfilm-400 font-medium">Cọc trước 50% để chốt lịch:</span>
+                  <strong id="summary-deposit" class="text-amberfilm-400 text-sm">75.000đ</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5">
+              <button onclick="copyBookingMessage()" class="w-full py-3 px-4 rounded-xl bg-amberfilm-500 hover:bg-amberfilm-400 text-forest-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+                <span id="copy-btn-text">Sao Chép Nội Dung Đặt Lịch</span>
+              </button>
+              <p class="text-[11px] text-center text-cream-200/60">
+                Sau khi sao chép, bạn dán gửi qua <strong>Zalo (0909193241)</strong>, <strong>IG (Mèo Lang Thang)</strong> hoặc <strong>FB (Huỳnh Sâm)</strong> nhé!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW (3 STEPS) & IMPORTANT NOTES -->
+  <section id="process" class="py-20 border-t border-cream-200/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest text-amberfilm-500 font-semibold">Làm Việc Rõ Ràng & Thoải Mái</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-cream-50 mt-1">Quy Trình 3 Bước & Lưu Ý</h2>
+      </div>
+
+      <!-- 3 Steps Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <!-- Step 1 -->
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="text-4xl font-serif font-bold text-amberfilm-500/25 absolute top-4 right-6">01</span>
+          <div class="w-10 h-10 rounded-xl bg-amberfilm-500/20 text-amberfilm-400 flex items-center justify-center mb-4">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Trước Khi Chụp</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+            <li>• Trao đổi và chốt địa điểm, trang phục, concept và lịch chụp sớm nhất (tốt nhất <strong>trước 1 tuần</strong> để Mèo chuẩn bị).</li>
+            <li>• Vui lòng <strong>đặt cọc trước 50%</strong> để giữ lịch chính thức.</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="text-4xl font-serif font-bold text-amberfilm-500/25 absolute top-4 right-6">02</span>
+          <div class="w-10 h-10 rounded-xl bg-amberfilm-500/20 text-amberfilm-400 flex items-center justify-center mb-4">
+            <i data-lucide="camera" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Trong Lúc Chụp</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+            <li>• Mèo luôn đến sớm <strong>30 phút</strong> để khảo sát góc chụp.</li>
+            <li>• Hỗ trợ đợi trễ tối đa <strong>30 phút</strong>. Nếu trễ hơn làm ảnh hưởng lịch trình sẽ phụ thu <strong>50% tiền công</strong> buổi chụp.</li>
+            <li>• Luôn cho bạn xem ảnh trực tiếp trên máy để điều chỉnh góc mặt/dáng ngay tại chỗ.</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="text-4xl font-serif font-bold text-amberfilm-500/25 absolute top-4 right-6">03</span>
+          <div class="w-10 h-10 rounded-xl bg-amberfilm-500/20 text-amberfilm-400 flex items-center justify-center mb-4">
+            <i data-lucide="folder-heart" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Sau Buổi Chụp</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+            <li>• Thanh toán phần chi phí còn lại. Mèo gửi link <strong>Google Drive</strong> toàn bộ ảnh gốc (JPEG/RAW theo yêu cầu).</li>
+            <li>• Bạn gửi mã ảnh (VD: <code>DSC_0001</code>) để Mèo hậu kỳ trong <strong>2–3 ngày</strong> (tối đa 1 tuần nếu ảnh phức tạp).</li>
+            <li>• <strong>Lưu ý Drive:</strong> Ảnh trên Drive được lưu giữ tối đa <strong>1 tháng (30 ngày)</strong>, bạn nhớ tải về máy sớm nhé!</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Detailed Scope & Testimonial Row -->
+      <div class="grid md:grid-cols-12 gap-6">
+        <!-- Scope of Retouching & Notes -->
+        <div class="md:col-span-7 glass-card rounded-2xl p-6 sm:p-8">
+          <h3 class="font-serif text-xl font-bold text-cream-50 mb-4 flex items-center gap-2">
+            <i data-lucide="sliders" class="w-5 h-5 text-amberfilm-500"></i>
+            <span>Quy Định Về Hậu Kỳ & Lưu Ý Khác</span>
+          </h3>
+          <div class="space-y-3 text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+            <p>
+              • <strong>Phạm vi chỉnh sửa tiêu chuẩn:</strong> Cân chỉnh ánh sáng/màu sắc, làm sáng da tự nhiên và hỗ trợ xóa người ở xa (những tấm có người dính sâu trực tiếp vào mẫu sẽ không thể xóa triệt để).
+            </p>
+            <p>
+              • <strong>Về tiền vé & tiền nước:</strong> Bạn chỉ cần chi trả nếu địa điểm bạn chọn có thu vé vào cổng hoặc bắt buộc gọi nước.
+            </p>
+            <p>
+              • <strong>Sử dụng hình ảnh & Form chụp Free:</strong> Mèo luôn xin phép bạn trước khi đăng ảnh lên trang để quảng bá. Đặc biệt, thỉnh thoảng Mèo sẽ mở <strong>Form chụp Free giới hạn số lượng (0đ tiền công)</strong> trên Instagram <em>Mèo Lang Thang</em>, nhớ follow để săn lịch nhé!
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial & Closing Note -->
+        <div class="md:col-span-5 glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-forest-800/80 to-forest-900/90">
+          <div>
+            <div class="flex items-center gap-1 text-amberfilm-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs sm:text-sm italic text-cream-100 leading-relaxed">
+              "Cảm ơn bạn đã chọn <strong>Mèo Lang Thang Phờ Tô</strong> đồng hành cùng bạn. Bản thân mình rất trân trọng và biết ơn vì bạn đã chọn con mèo này để lưu giữ những khoảnh khắc đáng nhớ. Mình sẽ cố gắng hết sức để chúng ta có một buổi 'ăn phở tô' ngon hết mực nhé!"
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-cream-200/15 flex items-center justify-between">
+            <div>
+              <p class="font-script text-2xl text-amberfilm-500">Mèo Lang Thang</p>
+              <p class="text-[11px] text-cream-200/60">Nếu ưng hình có thể tip thêm cho Mèo có động lực vận hành tiếp tiệm phở nha!</p>
+            </div>
+            <a href="tel:0909193241" class="px-4 py-2 rounded-xl bg-amberfilm-500 text-forest-950 font-bold text-xs hover:bg-amberfilm-400 transition shrink-0">
+              Gọi 0909.193.241
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-cream-200/10 text-center text-xs text-cream-200/50">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 <strong>Mèo Lang Thang Phờ Tô</strong> — by Huỳnh Thái Triệu Sâm.</p>
+      <div class="flex items-center gap-5">
+        <span>SĐT/Zalo: 0909193241</span>
+        <span>IG: Mèo Lang Thang</span>
+        <span>FB: Huỳnh Sâm</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Danh sách tác phẩm thực tế trích xuất từ hồ sơ Mèo Lang Thang Phờ Tô
+    const portfolioItems = [
+      {
+        title: 'Tác phẩm "Bình Yên"',
+        subtitle: 'Dinh Độc Lập • Giải Ba cuộc thi "Zi Tích Talk"',
+        category: 'landscape',
+        badge: 'Giải Ba Zi Tích Talk',
+        image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Khoa Dược TDTU Trong Tôi',
+        subtitle: 'Đại học Tôn Đức Thắng • Bộ ảnh đạt Giải Nhất',
+        category: 'landscape',
+        badge: 'Giải Nhất TDTU',
+        image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Tác phẩm "Gánh Xuân Trên Sông"',
+        subtitle: 'Chợ Hoa Xuân "Trên Bến Dưới Thuyền" lần thứ 13',
+        category: 'landscape',
+        badge: 'Tác phẩm tiêu biểu',
+        image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Trạm Ký Ức',
+        subtitle: 'Đà Lạt, 2026 • Phơi sáng & Storytelling',
+        category: 'landscape',
+        badge: 'Đà Lạt 2026',
+        image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Tác phẩm "Người Lưu Giữ Thời Gian"',
+        subtitle: 'Street Photography • Giải Khuyến Khích "Zi Tích Talk"',
+        category: 'street',
+        badge: 'Giải KK Zi Tích Talk',
+        image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Chung Cư Ngô Gia Tự',
+        subtitle: 'TP. Hồ Chí Minh, 2026 • Đời sống & Ánh sáng chiều',
+        category: 'street',
+        badge: 'Sài Gòn 2026',
+        image: 'https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Chân Dung Truyền Thống & Nàng Thơ',
+        subtitle: 'Dinh Độc Lập, Bưu Điện TP, Lăng Ông Bà Chiểu, Bảo tàng Y học Cổ truyền',
+        category: 'portrait',
+        badge: 'Portrait 2025–2026',
+        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Chân Dung Couple Ngoại Cảnh',
+        subtitle: 'Bảo tàng TP.HCM, Dinh Độc Lập, Thảo Cầm Viên (2026)',
+        category: 'portrait',
+        badge: 'Couple 2026',
+        image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Đồ Án Thời Trang: "Tùy Ba Đính" & "Nympha"',
+        subtitle: 'Đồ án kết môn của Huỳnh Hương Thảo & Trần Ngọc Trâm',
+        category: 'fashion',
+        badge: 'Fashion Project',
+        image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80'
+      },
+      {
+        title: 'Truyền Thông Sự Kiện & Học Thuật',
+        subtitle: 'Đoàn – Hội Khoa Dược TDTU & Sự kiện cá nhân',
+        category: 'event',
+        badge: 'Event Coverage',
+        image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80'
+      }
+    ];
+
+    function renderPortfolio(filter = 'all') {
+      const grid = document.getElementById('portfolio-grid');
+      const filtered = filter === 'all' 
+        ? portfolioItems 
+        : portfolioItems.filter(item => item.category === filter);
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="group glass-card rounded-2xl overflow-hidden flex flex-col justify-between transition hover:-translate-y-1 hover:border-amberfilm-500/40">
+          <div class="relative h-60 overflow-hidden bg-forest-950">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-forest-950/85 border border-amberfilm-500/40 text-amberfilm-400 text-[11px] font-semibold">
+              ${item.badge}
+            </span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-serif text-lg font-bold text-cream-50 group-hover:text-amberfilm-400 transition">${item.title}</h3>
+            <p class="text-xs text-cream-200/70 mt-1">${item.subtitle}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterPortfolio(category, btnElement) {
+      document.querySelectorAll('#portfolio-tabs button').forEach(btn => btn.classList.remove('active-tab'));
+      btnElement.classList.add('active-tab');
+      renderPortfolio(category);
+    }
+
+    function formatVND(amount) {
+      return amount.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function updateCalculator() {
+      const select = document.getElementById('calc-package');
+      const option = select.options[select.selectedIndex];
+      const noRetouchChecked = document.getElementById('calc-no-retouch').checked;
+      const extraPhotos = Math.max(0, parseInt(document.getElementById('calc-extra-photos').value) || 0);
+      const deepBody = Math.max(0, parseInt(document.getElementById('calc-deep-body').value) || 0);
+
+      const basePrice = noRetouchChecked 
+        ? parseInt(option.getAttribute('data-no-retouch')) 
+        : parseInt(option.getAttribute('data-price'));
+      const extraRate = parseInt(option.getAttribute('data-extra-rate'));
+
+      const extraCost = noRetouchChecked ? 0 : (extraPhotos * extraRate);
+      const bodyCost = noRetouchChecked ? 0 : (deepBody * 10000);
+      const total = basePrice + extraCost + bodyCost;
+      const deposit = Math.round(total * 0.5);
+
+      document.getElementById('summary-base').textContent = formatVND(basePrice);
+      document.getElementById('summary-extra').textContent = formatVND(extraCost);
+      document.getElementById('summary-body').textContent = formatVND(bodyCost);
+      document.getElementById('summary-total').textContent = formatVND(total);
+      document.getElementById('summary-deposit').textContent = formatVND(deposit);
+    }
+
+    function copyBookingMessage() {
+      const select = document.getElementById('calc-package');
+      const pkgName = select.options[select.selectedIndex].text;
+      const noRetouch = document.getElementById('calc-no-retouch').checked ? 'Không cần hậu kỳ (Lấy file gốc)' : 'Có hậu kỳ theo gói';
+      const extraPhotos = document.getElementById('calc-extra-photos').value || 0;
+      const deepBody = document.getElementById('calc-deep-body').value || 0;
+      const name = document.getElementById('client-name').value || 'Khách hàng';
+      const dateLoc = document.getElementById('client-date').value || 'Trao đổi thêm';
+      const total = document.getElementById('summary-total').textContent;
+      const deposit = document.getElementById('summary-deposit').textContent;
+
+      const message = 
+`Xin chào Mèo Lang Thang Phờ Tô! Mình muốn đặt lịch chụp với thông tin sau:
+- Tên của mình: ${name}
+- Gói chụp: ${pkgName}
+- Chế độ hậu kỳ: ${noRetouch}
+- Chỉnh thêm ngoài gói: ${extraPhotos} tấm | Chỉnh dáng sâu: ${deepBody} tấm
+- Địa điểm & Ngày dự kiến: ${dateLoc}
+- Tổng tiền công tạm tính: ${total} (Cọc 50%: ${deposit})
+Mèo tư vấn thêm giúp mình nhé!`;
+
+      navigator.clipboard.writeText(message).then(() => {
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.textContent = 'Đã Sao Chép! Hãy Dán Gửi Cho Mèo Nhé';
+        setTimeout(() => {
+          btnText.textContent = 'Sao Chép Nội Dung Đặt Lịch';
+        }, 3000);
+      });
+    }
+
+    // Khởi tạo giao diện
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPortfolio('all');
+      updateCalculator();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
